@@ -1,0 +1,19 @@
+{%- assign series = site.categories.xlerobot | sort: "date" -%}
+{%- assign idx = -1 -%}
+{%- for p in series -%}{%- if p.url == page.url -%}{%- assign idx = forloop.index0 -%}{%- endif -%}{%- endfor -%}
+{%- if idx >= 0 -%}
+{%- assign last = series.size | minus: 1 -%}
+{%- comment -%} Liquid can't evaluate filters inside [], so index vars are assigned first. {%- endcomment -%}
+{%- assign previ = idx | minus: 1 -%}
+{%- assign nexti = idx | plus: 1 -%}
+<div class="notice--info" markdown="0">
+  <strong>Part {{ idx | plus: 1 }} of {{ series.size }}</strong> in the
+  <a href="{{ '/xlerobot/' | relative_url }}">XLeRobot build log</a>.
+  {%- if idx > 0 %}{%- assign prev = series[previ] %}
+  <br>← Previous: <a href="{{ prev.url | relative_url }}">{{ prev.title }}</a>
+  {%- endif %}
+  {%- if idx < last %}{%- assign nxt = series[nexti] %}
+  <br>→ Next: <a href="{{ nxt.url | relative_url }}">{{ nxt.title }}</a>
+  {%- endif %}
+</div>
+{%- endif -%}
