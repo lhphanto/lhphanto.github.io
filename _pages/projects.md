@@ -6,11 +6,15 @@ author_profile: true
 classes: wide
 ---
 
-## Dust
+<!-- Add a `##` section per project. Example:
 
-A personal robotics project built on [XLeRobot](https://github.com/Vector-Wangel/XLeRobot),
-an open-source dual-arm mobile robot platform. Custom hardware work and
-fine-tuned control policies.
+## Project name
 
-<!-- Add more projects as `##` sections. To use the theme's card grid instead,
-     see: https://mmistakes.github.io/minimal-mistakes/docs/layouts/#feature-row -->
+One or two sentences on what it is and what's interesting about it.
+[GitHub](https://github.com/lhphanto/repo)
+
+For the theme's card-grid layout instead, see:
+https://mmistakes.github.io/minimal-mistakes/docs/layouts/#feature-row
+-->
+
+Coming soon.
