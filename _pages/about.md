@@ -5,7 +5,7 @@ layout: single
 author_profile: true
 ---
 
-Machine learning engineer working on robotics and generative models.
+Machine learning engineer working on vision models.
 
 <!-- Replace this with a few sentences about yourself: what you work on,
      what you're interested in, what you're currently building. -->
