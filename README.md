@@ -47,3 +47,12 @@ Skin is set by `minimal_mistakes_skin` in `_config.yml`. Options: `air`, `aqua`,
 `mint`, `neon`, `plum`, `sunrise`.
 
 Theme docs: https://mmistakes.github.io/minimal-mistakes/docs/configuration/
+
+## Note on the Gemfile
+
+The `github-pages` gem pins Jekyll 3.9, which cannot run on Ruby 3.2+ (it calls
+`String#tainted?`, removed in Ruby 3.2). This Gemfile uses Jekyll 4 for local preview
+instead, while GitHub Pages still builds the live site with its own Jekyll 3.10.
+
+Minimal Mistakes supports both, so this is fine in practice. To make local and
+production identical, switch the repo to a GitHub Actions build with Jekyll 4.

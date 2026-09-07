@@ -1,9 +1,9 @@
 source "https://rubygems.org"
 
-# GitHub Pages builds the live site with this gem set. Keeping it here means a
-# local `bundle exec jekyll serve` matches what GitHub actually publishes.
-gem "github-pages", group: :jekyll_plugins
-gem "tzinfo-data"
+# Jekyll 4 for local preview. The `github-pages` gem pins Jekyll 3.9, which
+# cannot run on Ruby 3.2+ (it calls String#tainted?, removed in Ruby 3.2).
+gem "jekyll", "~> 4.4"
+gem "jekyll-remote-theme"
 
 group :jekyll_plugins do
   gem "jekyll-paginate"
@@ -14,8 +14,8 @@ group :jekyll_plugins do
   gem "jekyll-include-cache"
 end
 
-# Ruby 3.x removed these from stdlib; Jekyll still wants them.
 gem "webrick", "~> 1.8"
+gem "tzinfo-data"
 gem "csv"
 gem "base64"
 gem "bigdecimal"
