@@ -1,6 +1,6 @@
 ---
 title: "Part 1: 3D Printing the Parts"
-excerpt: "Starting the XLeRobot build at the printer — and learning that one elbow part needs tree supports, not normal ones."
+excerpt: "Starting the XLeRobot build at the printer: why one elbow part needs tree supports, and why 1 kg of filament isn't enough."
 date: 2026-09-07
 categories:
   - xlerobot
@@ -17,8 +17,8 @@ toc_sticky: true
 Starting my [XLeRobot](https://github.com/Vector-Wangel/XLeRobot) build — an open-source
 dual-arm mobile robot built on LeKiwi, dual SO-101 arms, and an IKEA RÅSKOG cart.
 
-Everything begins at the printer, so this post covers the print run and the one mistake
-that cost me a part.
+Everything begins at the printer, so this post covers the print run and the two things
+I'd do differently — one that cost me a part, one that cost me four days.
 
 ## The setup
 
@@ -85,6 +85,25 @@ primer on when and why to use them.
      spaghetti failure next to the successful tree-support print. Drop images in
      assets/images/ and reference them as ![alt](/assets/images/filename.jpg) -->
 
+## The other lesson: buy more filament than you think
+
+The guide estimates **$15–25** in filament, which reads like roughly one spool. It
+wasn't enough for me.
+
+I ran out mid-way through the part list with a single 1 kg spool, and since I hadn't
+ordered a backup, the whole build stopped for **four days** waiting on delivery. Not a
+hard problem — just an entirely avoidable one.
+
+The arms alone are substantial, and once you add the base, the storage shell, the neck
+and head, and the wheel base, one spool doesn't cover it. Matte filaments also tend to
+be a little denser than standard PLA, so the same part weighs marginally more.
+
+**Order two spools up front.** A spare spool of PLA costs about $20 and always gets
+used eventually. Four idle days cost considerably more than that.
+
+If you're printing the soft gripper fingers, add TPU95A to the same order — you'll
+need it, and it's another separate delivery if you forget.
+
 ## Takeaways
 
 - **Don't trust default supports on organic geometry.** Preview every part in the slicer
@@ -92,6 +111,8 @@ primer on when and why to use them.
 - **Tree supports for curved overhangs**, normal supports for flat ones.
 - **Dual-nozzle support material solves removal, not coverage.** Different problem.
 - **Dry the filament** if your air is humid — cheaper than a failed print.
+- **Order two spools of filament up front.** One 1 kg spool did not cover this build,
+  and the resupply cost me four days.
 
 ## Next
 
