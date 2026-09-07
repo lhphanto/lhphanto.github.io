@@ -25,7 +25,9 @@ I'd do differently — one that cost me a part, one that cost me four days.
 **Printer:** [Bambu Lab X2D](https://bambulab.com/en-us/x2d) — dual extruder, with an
 auxiliary nozzle dedicated to support material.
 
-**Filament:** Bambu Lab PLA Matte, Charcoal.
+**Filament:**
+- Bambu Lab PLA Matte, Charcoal — for the structural parts
+- **TPU95A** — required for the soft gripper fingers. PLA will not work here.
 
 The [XLeRobot 3D printing guide](https://xlerobot.readthedocs.io/en/latest/hardware/getting_started/3d.html)
 recommends plain PLA and notes the demo units were printed in PLA Matte Black. PETG HF,
@@ -101,8 +103,10 @@ be a little denser than standard PLA, so the same part weighs marginally more.
 **Order two spools up front.** A spare spool of PLA costs about $20 and always gets
 used eventually. Four idle days cost considerably more than that.
 
-If you're printing the soft gripper fingers, add TPU95A to the same order — you'll
-need it, and it's another separate delivery if you forget.
+**And order the TPU95A at the same time.** The soft gripper fingers need it — PLA is
+too rigid to work as a compliant gripper. It's easy to treat as an afterthought because
+it's a small quantity and comes late in the part list, but forgetting it means a second
+delivery wait on top of the first. Two materials, one order.
 
 ## Takeaways
 
@@ -111,8 +115,9 @@ need it, and it's another separate delivery if you forget.
 - **Tree supports for curved overhangs**, normal supports for flat ones.
 - **Dual-nozzle support material solves removal, not coverage.** Different problem.
 - **Dry the filament** if your air is humid — cheaper than a failed print.
-- **Order two spools of filament up front.** One 1 kg spool did not cover this build,
-  and the resupply cost me four days.
+- **Order two spools of PLA up front, plus the TPU95A.** One 1 kg spool did not cover
+  this build, and the resupply cost me four days. The gripper needs TPU95A — order it
+  in the same batch, not later.
 
 ## Next
 
