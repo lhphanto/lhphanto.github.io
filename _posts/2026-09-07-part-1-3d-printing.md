@@ -35,9 +35,6 @@ PLA CF, or Tough PLA are listed as stronger alternatives if you want them. The X
 considerably more printer than this build needs — the docs point out a Bambu A1 at
 around $350 is entirely sufficient.
 
-One prep step worth not skipping: the docs suggest **drying PLA at 45 °C for 8 hours**
-before printing if you're anywhere humid.
-
 ## What gets printed
 
 Per the guide:
@@ -114,7 +111,6 @@ delivery wait on top of the first. Two materials, one order.
   before committing to a multi-hour run.
 - **Tree supports for curved overhangs**, normal supports for flat ones.
 - **Dual-nozzle support material solves removal, not coverage.** Different problem.
-- **Dry the filament** if your air is humid — cheaper than a failed print.
 - **Order two spools of PLA up front, plus the TPU95A.** One 1 kg spool did not cover
   this build, and the resupply cost me four days. The gripper needs TPU95A — order it
   in the same batch, not later.
