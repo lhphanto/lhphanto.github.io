@@ -59,7 +59,7 @@ analytics:
 author:
   name                  : "Hui Liu"
   avatar                : "/assets/images/author.avatar.jpg"
-  bio                   : "Machine learning engineer working on robotics and generative models."
+  bio                   : "Machine learning engineer working on vision models."
   location              : "Bay Area, CA"
   links:
     - label: "GitHub"
