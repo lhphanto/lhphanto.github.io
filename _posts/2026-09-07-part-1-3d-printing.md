@@ -70,12 +70,7 @@ curved overhangs, where normal supports don't make contact.
 
 **Keep in mind:**
 
-- **Preview every part in the slicer** before starting a multi-hour print, and check
-  that every overhang has something under it.
 - **Tree supports for curved overhangs, normal supports for flat ones.**
-- **A dedicated support nozzle doesn't fix this.** The X2D's second nozzle makes
-  supports easier to remove and cleaner where they touch the part, but whether an
-  overhang gets supported depends only on the support type and the part's geometry.
 - New to supports? [This video](https://youtu.be/89WspiTc5Z0) is a good primer on when
   and why to use them.
 
