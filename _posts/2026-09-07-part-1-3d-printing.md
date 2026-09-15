@@ -1,6 +1,6 @@
 ---
 title: "Part 1: 3D Printing the Parts"
-excerpt: "Starting the XLeRobot build at the printer: why one elbow part needs tree supports, and why 1 kg of filament isn't enough."
+excerpt: "Starting the XLeRobot build at the printer: why the wrist part needs tree supports, and why 1 kg of filament isn't enough."
 date: 2026-09-07
 categories:
   - xlerobot
@@ -52,9 +52,10 @@ option if you'd rather stick to PLA. The guide puts total filament cost at $15â€
 
 ### 1. Use tree supports on curved overhangs
 
-**Problem:** One of the SO-ARM101 elbow parts failed partway up. Its overhanging tabs
-had nothing underneath them, so the nozzle extruded into open air and the print turned
-into "spaghetti", a nest of loose filament. The guide leaves supports up to you:
+**Problem:** I printed the SO-ARM101 wrist part without supports, and it failed partway
+up. Its overhanging tabs had nothing underneath them, so the nozzle extruded into open
+air and the print turned into "spaghetti", a nest of loose filament. The guide leaves
+supports up to you:
 
 > Place, orient, and add supports yourself in the slicing software to ensure the best
 > printing quality.
@@ -107,4 +108,5 @@ storage shell, neck, head, and wheel base together need more.
 
 ## Next
 
-Assembling the SO-ARM101 and setting up its servos.
+[Part 2]({% post_url 2026-09-14-part-2-assemble-so-arm101 %}): assembling the
+SO-ARM101 and setting up its servos.

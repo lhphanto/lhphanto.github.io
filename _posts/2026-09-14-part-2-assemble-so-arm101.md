@@ -10,7 +10,6 @@ tags:
   - so-arm101
 toc: true
 toc_sticky: true
-published: false
 ---
 
 {% include series-nav.html %}
