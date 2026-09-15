@@ -14,26 +14,26 @@ toc_sticky: true
 
 {% include series-nav.html %}
 
-Starting my [XLeRobot](https://github.com/Vector-Wangel/XLeRobot) build — an open-source
+Starting my [XLeRobot](https://github.com/Vector-Wangel/XLeRobot) build: an open-source
 dual-arm mobile robot built on LeKiwi, dual SO-101 arms, and an IKEA RÅSKOG cart.
+Everything begins at the printer, so this post covers the print run and what I'd do
+differently.
 
-Everything begins at the printer, so this post covers the print run and the two things
-I'd do differently — one that cost me a part, one that cost me four days.
+## Setup
 
-## The setup
-
-**Printer:** [Bambu Lab X2D](https://bambulab.com/en-us/x2d) — dual extruder, with an
-auxiliary nozzle dedicated to support material.
-
-**Filament:**
-- Bambu Lab PLA Matte, Charcoal — for the structural parts
-- **TPU95A** — required for the soft gripper fingers. PLA will not work here.
+- **Printer:** [Bambu Lab X2D](https://bambulab.com/en-us/x2d), a dual extruder with a
+  nozzle dedicated to support material. That's more printer than this build needs; the
+  guide notes a Bambu A1 (around $350) is enough.
+- **Filament:** Bambu Lab PLA Matte, Charcoal, for the structural parts, and **TPU95A**
+  for the soft gripper fingers.
+- **Models:** XLeRobot version 0.3,
+  [`XLeRobot_0_3_0.3mf`](https://github.com/Vector-Wangel/XLeRobot/blob/main/hardware/XLeRobot_0_3_0.3mf)
+  from the project's `hardware/` folder. It's a `.3mf` file, so it opens directly in
+  slicers like Bambu Studio.
 
 The [XLeRobot 3D printing guide](https://xlerobot.readthedocs.io/en/latest/hardware/getting_started/3d.html)
-recommends plain PLA and notes the demo units were printed in PLA Matte Black. PETG HF,
-PLA CF, or Tough PLA are listed as stronger alternatives if you want them. The X2D is
-considerably more printer than this build needs — the docs point out a Bambu A1 at
-around $350 is entirely sufficient.
+recommends plain PLA (the demo units use PLA Matte Black), with PETG HF, PLA CF, or
+Tough PLA as stronger alternatives.
 
 ## What gets printed
 
@@ -45,76 +45,66 @@ Per the guide:
 - **Wheel base** components for the omni-wheels
 - Optional protective shells for control boards and joints
 
-Soft gripper fingers need TPU95A rather than PLA — the original rigid SO-101 fingers are
-available if you'd rather not switch materials.
+The soft gripper fingers are printed in TPU95A; the original rigid SO-101 fingers are an
+option if you'd rather stick to PLA. The guide puts total filament cost at $15–25.
 
-Total filament cost lands around $15–25.
+## Lessons learned
 
-## The lesson: tree supports on the elbow
+### 1. Use tree supports on curved overhangs
 
-The docs are deliberately hands-off about supports:
+**Problem:** One of the SO-ARM101 elbow parts failed partway up. Its overhanging tabs
+had nothing underneath them, so the nozzle extruded into open air and the print turned
+into "spaghetti", a nest of loose filament. The guide leaves supports up to you:
 
 > Place, orient, and add supports yourself in the slicing software to ensure the best
 > printing quality.
 
-That's reasonable — orientation depends on your printer and plate layout. But it means
-the failure modes are yours to discover, and I found one.
+{% include figure image_path="/assets/images/wrist_without_support.jpg" alt="Printed arm part whose two overhanging tabs failed into loose strands of filament" caption="Without supports: nothing under the overhangs, so the nozzle extruded into open air." %}
 
-One of the **elbow parts for the SO-ARM101** failed partway up with default supports.
-The overhang wasn't adequately supported, the perimeter had nothing to sit on, and the
-nozzle started extruding into open air — the classic **"spaghetti"** failure, where the
-print turns into a nest of loose filament.
+**Fix:** Reprint the part with **tree supports**. Normal supports grow straight up from
+the build plate as a solid block; tree supports branch in from the side and reach under
+curved overhangs, where normal supports don't make contact.
 
-**The fix: switch that part to tree supports.**
+{% include figure image_path="/assets/images/wrist_with_support.jpg" alt="The same part on the build plate, held up by branching tree supports under its overhangs" caption="With tree supports: branches reach under the overhangs from the build plate." %}
 
-Tree supports branch in from the side and reach under overhangs, rather than growing
-straight up as a solid block from the build plate. For an organic, curved geometry like
-the elbow, they make contact where normal supports simply don't reach.
+**Keep in mind:**
 
-Worth flagging a subtlety I didn't appreciate at first: **the X2D's dedicated support
-nozzle doesn't help here.** A second nozzle makes supports *easier to remove* and cleaner
-at the interface — it doesn't change *whether* an overhang gets supported in the first
-place. That's purely a function of support type and geometry. Dual extrusion is a
-removal convenience, not a coverage guarantee.
+- **Preview every part in the slicer** before starting a multi-hour print, and check
+  that every overhang has something under it.
+- **Tree supports for curved overhangs, normal supports for flat ones.**
+- **A dedicated support nozzle doesn't fix this.** The X2D's second nozzle makes
+  supports easier to remove and cleaner where they touch the part, but whether an
+  overhang gets supported depends only on the support type and the part's geometry.
+- New to supports? [This video](https://youtu.be/89WspiTc5Z0) is a good primer on when
+  and why to use them.
 
-If supports are new to you, [this video](https://youtu.be/89WspiTc5Z0) is a solid general
-primer on when and why to use them.
+<!-- TODO: note the exact STL filename of this part. -->
 
-<!-- TODO: note the exact STL filename of the elbow part, and add a photo of the
-     spaghetti failure next to the successful tree-support print. Drop images in
-     assets/images/ and reference them as ![alt](/assets/images/filename.jpg) -->
+### 2. Order all the filament up front
 
-## The other lesson: buy more filament than you think
+**Problem:** I started with a single 1 kg spool of PLA, and it ran out partway through
+the part list. With no backup ordered, the build stopped for **four days** waiting on
+delivery. The guide's $15–25 estimate reads like one spool, but the two arms, base,
+storage shell, neck, head, and wheel base together need more.
 
-The guide estimates **$15–25** in filament, which reads like roughly one spool. It
-wasn't enough for me.
+**Fix:**
 
-I ran out mid-way through the part list with a single 1 kg spool, and since I hadn't
-ordered a backup, the whole build stopped for **four days** waiting on delivery. Not a
-hard problem — just an entirely avoidable one.
+- **Order two 1 kg spools of PLA.** A spare spool costs about $20 and will get used
+  eventually; four idle days cost more.
+- **Order the TPU95A in the same order.** It's a small amount and comes late in the part
+  list, so it's easy to forget, and forgetting it means a second delivery wait. PLA is
+  too rigid for the soft gripper fingers.
 
-The arms alone are substantial, and once you add the base, the storage shell, the neck
-and head, and the wheel base, one spool doesn't cover it. Matte filaments also tend to
-be a little denser than standard PLA, so the same part weighs marginally more.
+### 3. Don't feed TPU95A through the AMS
 
-**Order two spools up front.** A spare spool of PLA costs about $20 and always gets
-used eventually. Four idle days cost considerably more than that.
+<div class="notice--warning" markdown="1">
+**Problem:** TPU95A doesn't work with the Bambu AMS. Soft TPU can
+[get stuck in the printer](https://www.reddit.com/r/3Dprinting/s/Q4gBEKyso7).
 
-**And order the TPU95A at the same time.** The soft gripper fingers need it — PLA is
-too rigid to work as a compliant gripper. It's easy to treat as an afterthought because
-it's a small quantity and comes late in the part list, but forgetting it means a second
-delivery wait on top of the first. Two materials, one order.
-
-## Takeaways
-
-- **Don't trust default supports on organic geometry.** Preview every part in the slicer
-  before committing to a multi-hour run.
-- **Tree supports for curved overhangs**, normal supports for flat ones.
-- **Dual-nozzle support material solves removal, not coverage.** Different problem.
-- **Order two spools of PLA up front, plus the TPU95A.** One 1 kg spool did not cover
-  this build, and the resupply cost me four days. The gripper needs TPU95A — order it
-  in the same batch, not later.
+**Fix:** Feed TPU without the AMS. On the X2D, follow Bambu Lab's
+[TPU printing guide](https://wiki.bambulab.com/en/x2d/manual/tpu-printing-guide).
+</div>
 
 ## Next
 
-Assembly, and finding out how much the tolerances actually matter.
+Assembling the SO-ARM101 and setting up its servos.

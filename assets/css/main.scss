@@ -1,0 +1,28 @@
+---
+# Only the main Sass file needs front matter (the dashes are enough)
+search: false
+---
+
+@charset "utf-8";
+
+@import "minimal-mistakes/skins/{{ site.minimal_mistakes_skin | default: 'default' }}"; // skin
+@import "minimal-mistakes"; // main partials
+
+/* Smaller Previous / Next buttons at the bottom of posts.
+   The theme makes them two half-width blocks with large padding. */
+.pagination--pager {
+  width: auto;
+  padding: 0.35em 1em;
+  font-size: $type-size-6;
+  border-radius: $border-radius;
+
+  &:first-child {
+    border-radius: $border-radius;
+  }
+
+  &:last-child {
+    float: inline-end;
+    margin-inline-start: 0;
+    border-radius: $border-radius;
+  }
+}
