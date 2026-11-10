@@ -1,7 +1,7 @@
 ---
 title: "[build my robot] Part 4: Calibrate the Stereo Fisheye Camera"
 part: 4
-excerpt: "Calibrating XLeRobot's stereo fisheye camera with Zhang's method, then turning image pairs into depth maps and 3D point clouds."
+excerpt: "Calibrating the cheap stereo fisheye camera I chose for my XLeRobot with Zhang's method, then turning image pairs into depth maps and 3D point clouds."
 date: 2026-11-09
 categories:
   - xlerobot
@@ -16,11 +16,11 @@ toc_sticky: true
 
 {% include series-nav.html %}
 
-{% include figure image_path="/assets/images/stereo_point_cloud.jpg" alt="A colored 3D point cloud of a bedroom reconstructed from one stereo image pair: a wall with hanging light-bulb decals, windows above, and a table covered in LEGO in the foreground" caption="A 3D point cloud computed from a single image pair from the robot's stereo camera." %}
+{% include figure image_path="/assets/images/stereo_point_cloud.jpg" alt="A colored 3D point cloud of a bedroom reconstructed from one stereo image pair: a wall with hanging light-bulb decals, windows above, and a table covered in LEGO in the foreground" caption="A 3D point cloud computed from a single image pair from the stereo camera." %}
 
-XLeRobot's head camera is a cheap
-[stereo fisheye USB camera](https://www.amazon.com/dp/B0CBLZJZBT): two wide-angle lenses
-that deliver one 3840 × 1080 side-by-side frame, which is 1920 × 1080 per lens. To get
+For my XLeRobot's head camera, I went with a cheap
+[stereo fisheye USB camera](https://www.amazon.com/dp/B0CBLZJZBT) instead of the camera in
+the default XLeRobot setup. It has two wide-angle lenses that deliver one 3840 × 1080 side-by-side frame, which is 1920 × 1080 per lens. To get
 depth out of it, I first needed to know each lens's intrinsics and distortion, plus
 exactly where the two lenses sit relative to each other. Nothing like that is stored in the
 images, so I calibrated the camera myself.
