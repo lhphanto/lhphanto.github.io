@@ -59,15 +59,17 @@ production identical, switch the repo to a GitHub Actions build with Jekyll 4.
 
 ## Post series (build logs)
 
-Posts in the `xlerobot` category are automatically collected into a series at
-`/xlerobot/`, listed oldest-first.
+Posts in the `xlerobot` category form the robot-build series. They are listed
+with every other post under `/posts/` (there is no separate tab); titles start
+with `[build my robot]`, and each post's series box links its previous and next
+parts, oldest-first.
 
 To add a part:
 
 ```markdown
 ---
-title: "Part 2: Assembly"
-excerpt: "One-line summary shown on the series index."
+title: "[build my robot] Part 2: Assembly"
+excerpt: "One-line summary shown in the post list."
 date: 2026-09-14
 categories:
   - xlerobot

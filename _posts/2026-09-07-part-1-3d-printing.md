@@ -1,5 +1,6 @@
 ---
-title: "Part 1: 3D Printing the Parts"
+title: "[build my robot] Part 1: 3D Printing the Parts"
+part: 1
 excerpt: "Starting the XLeRobot build at the printer: why the wrist part needs tree supports, and why 1 kg of filament isn't enough."
 date: 2026-09-07
 categories:

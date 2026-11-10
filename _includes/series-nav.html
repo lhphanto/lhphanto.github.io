@@ -7,8 +7,10 @@
 {%- assign previ = idx | minus: 1 -%}
 {%- assign nexti = idx | plus: 1 -%}
 <div class="notice--info" markdown="0">
-  <strong>Part {{ idx | plus: 1 }} of {{ series.size }}</strong> in the
-  <a href="{{ '/xlerobot/' | relative_url }}">XLeRobot build log</a>.
+  {%- comment -%} An explicit `part:` in front matter wins; otherwise number by date order. {%- endcomment -%}
+  {%- if page.part %}{%- assign part_no = page.part -%}{%- else %}{%- assign part_no = idx | plus: 1 -%}{%- endif %}
+  <strong>Part {{ part_no }}</strong> of my robot build.
+  All parts are listed under <a href="{{ '/posts/' | relative_url }}">Posts</a>.
   {%- if idx > 0 %}{%- assign prev = series[previ] %}
   <br>← Previous: <a href="{{ prev.url | relative_url }}">{{ prev.title }}</a>
   {%- endif %}

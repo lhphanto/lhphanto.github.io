@@ -1,5 +1,6 @@
 ---
-title: "Part 2: Assemble the SO-ARM101"
+title: "[build my robot] Part 2: Assemble the SO-ARM101"
+part: 2
 excerpt: "Assembling the SO-ARM101 follower arm and setting up its STS3215 servos."
 date: 2026-09-14
 categories:

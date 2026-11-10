@@ -2,8 +2,6 @@
 main:
   - title: "Posts"
     url: /posts/
-  - title: "XLeRobot Build"
-    url: /xlerobot/
   - title: "Projects"
     url: /projects/
   - title: "About"

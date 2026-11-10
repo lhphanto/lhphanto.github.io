@@ -1,5 +1,6 @@
 ---
-title: "Part 3: Calibrate the Stereo Fisheye Camera"
+title: "[build my robot] Part 4: Calibrate the Stereo Fisheye Camera"
+part: 4
 excerpt: "Calibrating XLeRobot's stereo fisheye camera with Zhang's method, then turning image pairs into depth maps and 3D point clouds."
 date: 2026-11-09
 categories:
