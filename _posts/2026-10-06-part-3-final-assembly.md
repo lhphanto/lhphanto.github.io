@@ -193,5 +193,5 @@ and outer diameter.
 
 ## Next
 
-[Part 4]({% post_url 2026-11-09-part-3-calibrate-stereo-fisheye-camera %}): calibrating the
+[Part 4]({% post_url 2026-11-09-part-4-calibrate-stereo-fisheye-camera %}): calibrating the
 stereo fisheye head camera.

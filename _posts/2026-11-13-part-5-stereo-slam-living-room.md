@@ -19,7 +19,7 @@ toc_sticky: true
 
 {% include figure image_path="/assets/images/slam_mesh_comparison.jpg" alt="Six renderings of a living-room mesh in two rows, from the start position and looking at a sofa and a book display. Left column SGBM: bumpy floor, missing kitchen cabinet, blobby sofa. Middle and right columns RAFT-Stereo realtime and Middlebury: flat floor, a solid white cabinet, a sofa with visible back, seat, cushions and a teal blanket" caption="The same 300 frames fused into a mesh, with three depth sources. Left: SGBM. Middle: RAFT-Stereo realtime. Right: RAFT-Stereo Middlebury." %}
 
-With the [stereo camera calibrated]({% post_url 2026-11-09-part-3-calibrate-stereo-fisheye-camera %}), the
+With the [stereo camera calibrated]({% post_url 2026-11-09-part-4-calibrate-stereo-fisheye-camera %}), the
 next step was to let the robot map a room. I wanted three things:
 
 - the camera's **trajectory** (visual odometry),
@@ -81,7 +81,7 @@ For each frame:
 
 1. **Rectify** both halves with the fisheye calibration, at half resolution (960 × 540).
 2. **Depth** from stereo matching, Z = f · b / d, as in the
-   [previous post]({% post_url 2026-11-09-part-3-calibrate-stereo-fisheye-camera %}).
+   [previous post]({% post_url 2026-11-09-part-4-calibrate-stereo-fisheye-camera %}).
 3. **ORB features**, matched against the last **keyframe**.
 4. **Pose by 3D–2D matching:** the keyframe's features have 3D positions from its depth map,
    so `solvePnPRansac` gives the camera pose. A Huber-weighted Gauss–Newton step on SE(3) then
