@@ -73,7 +73,8 @@ instead. The rest of the build stays the same; only the wheels and their couplin
 
 That page is still marked as under construction. For the printed parts, it points to the
 dual-wheel build's files (`XLeRobot_0_4_0_extra.stl`) plus a wheel-to-motor coupling,
-`mecanum_wheel_motor_coupling.stl`, with its CAD source in `hardware/mecanum/`.
+`mecanum_wheel_motor_coupling.stl`, with its CAD source in `hardware/mecanum/`. I ended up
+printing a 4 mm taller coupling so the wheels clear the cart (see lesson 3 below).
 
 ### The wheels
 
@@ -170,24 +171,38 @@ From the computer, a servo stuck in overvoltage protection looks exactly like a 
 - Check the voltage before trusting the setup. Measure the DC plug with a multimeter, or
   run `servo_regs.py test` on any servo, which reports the voltage the servo actually sees.
 
-### 3. Watch for friction between the wheels and their bearings
+### 3. Leave clearance between the wheels and the cart
 
-**Problem:** My wheels rubbed against the wheel bearings. The gap between them was too
-tight, so the wheels had extra friction instead of spinning freely.
+**Problem:** With the stock coupling, my wheels sat too close to the cart and rubbed
+against it. The gap was too tight, so the wheels had extra friction instead of spinning
+freely.
 
 <figure>
   <video controls playsinline preload="metadata"
-         poster="{{ '/assets/videos/wheel_friction_before_vaseline.jpg' | relative_url }}"
+         poster="{{ '/assets/videos/wheel_friction.jpg' | relative_url }}"
          style="max-width: 320px; width: 100%;">
-    <source src="{{ '/assets/videos/wheel_friction_before_vaseline.mp4' | relative_url }}" type="video/mp4">
+    <source src="{{ '/assets/videos/wheel_friction.mp4' | relative_url }}" type="video/mp4">
   </video>
-  <figcaption>Before the Vaseline: the base drives unevenly, and you can hear the wheels rubbing.</figcaption>
+  <figcaption>With the stock coupling: the base drives unevenly, and you can hear the wheels rubbing.</figcaption>
 </figure>
 
-**Fix:** I put some Vaseline on the contact area, which was enough. A thicker bearing
-should also help, because it adds clearance between the wheel and the bearing. The
-mecanum guide specifies 30 × 37 × 4 mm bearings, so try a thicker one with the same inner
-and outer diameter.
+**Fix:** I raised the wheel by 4 mm with a taller version of the wheel-to-motor coupling,
+[`mecanum_wheel_motor_coupling_higher_plus4mm.stl`](https://github.com/lhphanto/build_xlerobot/blob/main/mecanum_wheel_motor_coupling_higher_plus4mm.stl).
+It has the same 60 × 60 mm footprint as the stock
+`mecanum_wheel_motor_coupling.stl`, but it is 16.85 mm tall instead of 12.85 mm. With it,
+there is no obvious contact between the wheels and the cart anymore.
+
+### 4. Mecanum wheels may not drive smoothly (still open)
+
+**Problem:** Even with the rubbing gone, the base still vibrates a lot when it drives.
+
+**My current guess:** It's the mecanum wheels themselves. They are a little too big for
+this base to drive smoothly. Mecanum wheels also touch the floor through a ring of small
+rollers, so the contact point hops from one roller to the next as the wheel turns, and that
+shakes the robot. I expect the base would drive smoothly on normal wheels or a belt drive,
+at the cost of not being able to strafe.
+
+<!-- TODO: update once you've tried smaller wheels, normal wheels, or a belt drive. -->
 
 <!-- TODO: add your own lessons in the same Problem / Fix format. -->
 
